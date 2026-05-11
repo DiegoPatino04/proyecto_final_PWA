@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
+import ProtectedRoute from './components/ProtectedRoute'
 import Login from './pages/Login'
 import Personas from './pages/Personas'
 import Mascotas from './pages/Mascotas'
@@ -10,12 +11,18 @@ function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route element={<Layout />}>
+      <Route
+        element={
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+        }
+      >
         <Route path="/" element={<Navigate to="/map" replace />} />
-        <Route path="/map" element={<Mapa />} />
-        <Route path="/census" element={<Censo />} />
-        <Route path="/pets" element={<Mascotas />} />
-        <Route path="/people" element={<Personas />} />
+        <Route path="/map"     element={<Mapa />} />
+        <Route path="/census"  element={<Censo />} />
+        <Route path="/pets"    element={<Mascotas />} />
+        <Route path="/people"  element={<Personas />} />
       </Route>
     </Routes>
   )
