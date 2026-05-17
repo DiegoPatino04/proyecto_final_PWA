@@ -86,7 +86,7 @@ export default function Personas() {
       {success_msg && (
         <div className="bg-green-50 border border-green-200 text-green-700
                         text-sm rounded-lg px-4 py-3">
-          ✅ {success_msg}
+          {success_msg}
         </div>
       )}
 
@@ -102,7 +102,7 @@ export default function Personas() {
                 name="nombres"
                 value={form_data.nombres}
                 onChange={handleChange}
-                placeholder="Hugo Armando"
+                placeholder="Diego Alejandro"
                 required
               />
             </FormField>
@@ -112,7 +112,7 @@ export default function Personas() {
                 name="apellidos"
                 value={form_data.apellidos}
                 onChange={handleChange}
-                placeholder="Cristancho Chinome"
+                placeholder="Patiño Vega"
                 required
               />
             </FormField>
